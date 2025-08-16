@@ -25,7 +25,8 @@
 
   <style>
     :root {
-      --amazon-orange: #FF9900;
+      --amazon-orange: #FF9900;   /* botão */
+      --loading-orange: #fe5e00;  /* barra de progresso */
       --amazon-orange-hover: #E68A00;
       --amazon-gray: #F3F3F3;
       --amazon-white: #FFFFFF;
@@ -80,7 +81,7 @@
     .loading-progress {
       height: 100%;
       width: 0%;
-      background-color: var(--amazon-orange);
+      background-color: var(--loading-orange); /* cor alterada */
       animation: loadingBar 3s ease-out forwards;
     }
 
@@ -166,7 +167,7 @@
 
     .action-button {
       width: 100%;
-      background-color: var(--amazon-orange);
+      background-color: var(--amazon-orange); /* botão segue #FF9900 */
       border: 1px solid #A88734;
       border-top: 1px solid #9C7E31;
       border-bottom: 1px solid #846A29;
@@ -192,7 +193,7 @@
     }
 
     .info-section {
-      margin-top: 24px; /* Espaçamento aumentado */
+      margin-top: 24px;
       padding-top: 14px;
       border-top: 1px solid var(--border-color);
     }
